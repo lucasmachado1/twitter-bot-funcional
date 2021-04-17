@@ -15,27 +15,18 @@ console.log('Iniciando');
   ]
 	});
 const page = await browser.newPage();
-	const urlweb = 'https://www.google.com/search?client=firefox-b-d&q=dados+covid+19';
+	const urlweb = 'https://www.worldometers.info/coronavirus/country/brazil/';
   await page.goto(urlweb);
 
   const casos = await page.evaluate(() => {
-	  return document.querySelector('.m7B03').firstChild.childNodes.item(0).innerText;
+	  return document.querySelector('.maincounter-number').childNodes.item(1).innerText;
 	  });
   const  rec = await page.evaluate(() => {
-		return document.querySelector('.QmWbpe').nextElementSibling.firstChild.nextSibling.childNodes.item(0).firstChild.innerText;
+		return document.querySelector('.content-inner').childNodes.item(15).children.item(1).innerText
 	  });	 
   const  mor = await page.evaluate(() => {
-		return document.querySelector('.QmWbpe').nextElementSibling.nextSibling.firstElementChild.nextElementSibling.childNodes.item(0).firstElementChild.innerText; 
+		document.querySelector('.content-inner').childNodes.item(13).children.item(1).innerText
 	  });	  
-  const  casosplus = await page.evaluate(() => {
-		return document.querySelector('.QmWbpe').lastChild.childNodes.item(0).firstChild.innerText;
-	  });	  
-	const  recplus = await page.evaluate(() => {
-		return document.querySelector('.QmWbpe').nextElementSibling.lastChild.childNodes.item(0).firstChild.innerText;
-		});  
-	const  morplus = await page.evaluate(() => {
-		return document.querySelector('.QmWbpe').nextElementSibling.nextElementSibling.lastChild.childNodes.item(0).firstChild.innerText;
-	});	 
 	const  mundial = await page.evaluate(() => {
 		return document.querySelector('.wveNAf').nextElementSibling.nextSibling.lastElementChild.childNodes.item(0).firstChild.childNodes.item(0).lastElementChild.childNodes.item(0).firstChild.innerText;
 	});		  
@@ -74,21 +65,13 @@ app.get('/add', (req, res)=>{
         res.write(`
 Data: ${hora}
 	
-Estatísticas Covid-19 Brasil:
+Estatísticas do Brasil:
 
 Total de casos:🔼 ${casos}lhões
-${casosplus}
 
 Recuperados:👐 ${rec}lhões
-${recplus}
 
 Mortes:⚰️ ${mor}
-${morplus}
-
-Mundial: 
-Total de casos:🔼 ${mundial}lhões
-Recuperados:👐 ${mundial2}lhões
-Mortes:⚰️ ${mundial3}lhões
 
 Fonte: http://bit.ly/estatisticascovid19`);
 		
@@ -96,23 +79,15 @@ Fonte: http://bit.ly/estatisticascovid19`);
 	   
 	T.post('statuses/update', { status: `
 
-	Data: ${hora}
+Data: ${hora}
+
 Estatísticas do Brasil:
 
 Casos:🔼 ${casos}lhões
-${casosplus}
 
 Recuperados:👐 ${rec}lhões
-${recplus}
 
 Mortes:⚰️ ${mor}
-${morplus}
-
-Mundial: 
-Total de casos:🔼 ${mundial}lhões
-Recuperados:👐 ${mundial2}lhões
-Mortes:⚰️ ${mundial3}lhões
-
 
 Fonte: http://bit.ly/estatisticascovid19
 `}, function(err, data, response) {
