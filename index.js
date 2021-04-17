@@ -27,15 +27,7 @@ const page = await browser.newPage();
   const  mor = await page.evaluate(() => {
 		document.querySelector('.content-inner').childNodes.item(13).children.item(1).innerText
 	  });	  
-	const  mundial = await page.evaluate(() => {
-		return document.querySelector('.wveNAf').nextElementSibling.nextSibling.lastElementChild.childNodes.item(0).firstChild.childNodes.item(0).lastElementChild.childNodes.item(0).firstChild.innerText;
-	});		  
-	const  mundial2 = await page.evaluate(() => {
-		return document.querySelector('.wveNAf').nextElementSibling.nextSibling.lastElementChild.childNodes.item(0).firstChild.childNodes.item(1).lastElementChild.childNodes.item(0).firstChild.innerText;
-	});		  
-	const  mundial3 = await page.evaluate(() => {
-		return document.querySelector('.wveNAf').nextElementSibling.nextSibling.lastElementChild.childNodes.item(0).firstChild.childNodes.item(2).lastElementChild.childNodes.item(0).firstChild.innerText;
-	});		  
+	  
 	  	  	  
 	const hora = moment().format("DD/MM/YYYY HH:mm:ss");
 
