@@ -119,9 +119,9 @@ Fonte: http://bit.ly/estatisticascovid19
 		console.log(data)
 	})
 }) 
-app.listen(1337, () => {
-	console.log('Link no ar')
-});
+//app.listen(1337, () => {
+	//console.log('Link no ar')
+//});
 }
 
 
