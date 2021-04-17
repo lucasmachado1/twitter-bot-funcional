@@ -29,6 +29,8 @@ const page = await browser.newPage();
 		return document.querySelector('.content-inner').childNodes.item(13).children.item(1).innerText;
 	  });	  
 	  
+
+	 
 	const hora = moment().format("DD/MM/YYYY HH:mm:ss", "America/Sao_Paulo");
 
    //await page.screenshot({ path: 'sdasdsad.png' });
