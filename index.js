@@ -29,10 +29,7 @@ const page = await browser.newPage();
 		document.querySelector('.content-inner').childNodes.item(13).children.item(1).innerText;
 	  });	  
 	  
-	var moment = require('moment-timezone');
-	moment().tz("America/Sao_Paulo").format(); 
-	 
-	const hora = moment().format("DD/MM/YYYY HH:mm:ss");
+	const hora = moment().format("DD/MM/YYYY HH:mm:ss", "America/Sao_Paulo");
 
    //await page.screenshot({ path: 'sdasdsad.png' });
    //await browser.close();
