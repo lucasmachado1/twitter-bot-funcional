@@ -85,6 +85,4 @@ Fonte: http://bit.ly/estatisticascovid19
 //});
 app.listen(process.env.PORT || 5000);
 }
-
-setInterval(robo, 1 * 60 * 1000);
 robo();
