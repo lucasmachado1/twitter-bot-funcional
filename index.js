@@ -20,13 +20,13 @@ const page = await browser.newPage();
   await page.goto(urlweb);
 
   const casos = await page.evaluate(() => {
-	  return document.querySelector('.maincounter-number').childNodes.item(1).innerText;
+		return document.querySelector('.maincounter-number').childNodes.item(1).innerText;
 	  });
   const  rec = await page.evaluate(() => {
 		return document.querySelector('.content-inner').childNodes.item(15).children.item(1).innerText;
 	  });	 
   const  mor = await page.evaluate(() => {
-		document.querySelector('.content-inner').childNodes.item(13).children.item(1).innerText;
+		return document.querySelector('.content-inner').childNodes.item(13).children.item(1).innerText;
 	  });	  
 	  
 	const hora = moment().format("DD/MM/YYYY HH:mm:ss", "America/Sao_Paulo");
