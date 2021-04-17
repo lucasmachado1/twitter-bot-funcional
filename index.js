@@ -15,35 +15,35 @@ console.log('Iniciando');
   ]
 	});
 	const page = await browser.newPage();
-	const urlweb = 'https://www.google.com/search?client=firefox-b-d&q=dados+covid+19';
+	const urlweb = 'https://ptax.bcb.gov.br/ptax_internet/consultarUltimaCotacaoDolar.do';
   await page.goto(urlweb);
 
   const casos = await page.evaluate(() => {
-	  return document.querySelector('.m7B03').firstChild.childNodes.item(0).innerText;
+	  return document.querySelector('.fundoPadraoBClaro2 [align=center]').textContent;
 	  });
   const  rec = await page.evaluate(() => {
-		return document.querySelector('.QmWbpe').nextElementSibling.firstChild.nextSibling.childNodes.item(0).firstChild.innerText;
+		return document.querySelector('.fundoPadraoBClaro2 [align=center]').textContent;
 	  });	 
   const  mor = await page.evaluate(() => {
-		return document.querySelector('.QmWbpe').nextElementSibling.nextSibling.firstElementChild.nextElementSibling.childNodes.item(0).firstElementChild.innerText; 
+		return document.querySelector('.fundoPadraoBClaro2 [align=center]').textContent;
 	  });	  
   const  casosplus = await page.evaluate(() => {
-		return document.querySelector('.QmWbpe').lastChild.childNodes.item(0).firstChild.innerText;
+		return document.querySelector('.fundoPadraoBClaro2 [align=center]').textContent;
 	  });	  
 	const  recplus = await page.evaluate(() => {
-		return document.querySelector('.QmWbpe').nextElementSibling.lastChild.childNodes.item(0).firstChild.innerText;
+		return document.querySelector('.fundoPadraoBClaro2 [align=center]').textContent;
 		});  
 	const  morplus = await page.evaluate(() => {
-		return document.querySelector('.QmWbpe').nextElementSibling.nextElementSibling.lastChild.childNodes.item(0).firstChild.innerText;
+		return document.querySelector('.fundoPadraoBClaro2 [align=center]').textContent;
 	});	 
 	const  mundial = await page.evaluate(() => {
-		return document.querySelector('.wveNAf').nextElementSibling.nextSibling.lastElementChild.childNodes.item(0).firstChild.childNodes.item(0).lastElementChild.childNodes.item(0).firstChild.innerText;
+		return document.querySelector('.fundoPadraoBClaro2 [align=center]').textContent;
 	});		  
 	const  mundial2 = await page.evaluate(() => {
-		return document.querySelector('.wveNAf').nextElementSibling.nextSibling.lastElementChild.childNodes.item(0).firstChild.childNodes.item(1).lastElementChild.childNodes.item(0).firstChild.innerText;
+		return document.querySelector('.fundoPadraoBClaro2 [align=center]').textContent;
 	});		  
 	const  mundial3 = await page.evaluate(() => {
-		return document.querySelector('.wveNAf').nextElementSibling.nextSibling.lastElementChild.childNodes.item(0).firstChild.childNodes.item(2).lastElementChild.childNodes.item(0).firstChild.innerText;
+		return document.querySelector('.fundoPadraoBClaro2 [align=center]').textContent;
 	});		  
 	  	  	  
 	const hora = moment().format("DD/MM/YYYY HH:mm:ss");
