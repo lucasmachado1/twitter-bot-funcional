@@ -1,5 +1,6 @@
 const express = require('express');
 const moment = require('moment');
+const momentTimezone = require('moment-timezone');
 const puppeteer = require('puppeteer');
 const app = express();
 
@@ -22,25 +23,19 @@ const page = await browser.newPage();
 	  return document.querySelector('.maincounter-number').childNodes.item(1).innerText;
 	  });
   const  rec = await page.evaluate(() => {
-		return document.querySelector('.content-inner').childNodes.item(15).children.item(1).innerText
+		return document.querySelector('.content-inner').childNodes.item(15).children.item(1).innerText;
 	  });	 
   const  mor = await page.evaluate(() => {
-		document.querySelector('.content-inner').childNodes.item(13).children.item(1).innerText
+		document.querySelector('.content-inner').childNodes.item(13).children.item(1).innerText;
 	  });	  
 	  
-	  	  	  
+	var moment = require('moment-timezone');
+	moment().tz("America/Sao_Paulo").format(); 
+	 
 	const hora = moment().format("DD/MM/YYYY HH:mm:ss");
 
    //await page.screenshot({ path: 'sdasdsad.png' });
    //await browser.close();
-   
-   
-  
- // var server = http.createServer(function (req, res){
-        
- // });
-  
- 
 
 var Twit = require('twit')
 var T = new Twit({
@@ -59,11 +54,11 @@ Data: ${hora}
 	
 Estatísticas do Brasil:
 
-Total de casos:🔼 ${casos}lhões
+Total de casos: 🔼 ${casos}
 
-Recuperados:👐 ${rec}lhões
+Recuperados: 👐 ${rec}
 
-Mortes:⚰️ ${mor}
+Mortes: ⚰️ ${mor}
 
 Fonte: http://bit.ly/estatisticascovid19`);
 		
@@ -75,11 +70,11 @@ Data: ${hora}
 
 Estatísticas do Brasil:
 
-Casos:🔼 ${casos}lhões
+Casos: 🔼 ${casos}
 
-Recuperados:👐 ${rec}lhões
+Recuperados: 👐 ${rec}
 
-Mortes:⚰️ ${mor}
+Mortes: ⚰️ ${mor}
 
 Fonte: http://bit.ly/estatisticascovid19
 `}, function(err, data, response) {
