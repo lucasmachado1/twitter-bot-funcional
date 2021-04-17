@@ -122,6 +122,7 @@ Fonte: http://bit.ly/estatisticascovid19
 //app.listen(1337, () => {
 	//console.log('Link no ar')
 //});
+app.listen(process.env.PORT || 5000);
 }
 
 
