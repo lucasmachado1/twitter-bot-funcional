@@ -38,10 +38,10 @@ const page = await browser.newPage();
 
 var Twit = require('twit')
 var T = new Twit({
-  consumer_key:         'TnUPtwRQikaWQEJz7zfMIiTtM',
-  consumer_secret:      'yO18TgCJxvt2lHWKJ2VFmGdJ8cEzTHSHYz7A1ExnxzJwHYYMlB',
-  access_token:         '1027798872939216896-faDNyZzfYlWM1npQUnA66Y6ncKdyBU',
-  access_token_secret:  '9qRQ4pi04aoVGLbRDwFwrpyCkXtbB1YszGhy10TuoL9p6',
+  consumer_key:         '',
+  consumer_secret:      '',
+  access_token:         '',
+  access_token_secret:  '',
   timeout_ms:           60*1000,
   strictSSL:            true,
 })
